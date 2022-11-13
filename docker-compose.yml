@@ -13,9 +13,9 @@ services:
       - 21116:21116/udp
       - 21118:21118
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r rustdesk.oto-sar.ru:21117 -k _
+    command: hbbs -r $HOSTNAME:21117 -k _
     volumes:
-      - ./data:/root
+      - data:/root
     networks:
       - rustdesk-net
     depends_on:
@@ -30,8 +30,10 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbr -k _
     volumes:
-      - ./data:/root
+      - data:/root
     networks:
       - rustdesk-net
     restart: unless-stopped
 
+volumes:
+  data:
