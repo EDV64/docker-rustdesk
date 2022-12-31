@@ -1,4 +1,4 @@
-# Docker for rustdesk-server
+# Docker for rustdesk server
 
 Put HOSTNAME=your-host.name in .env file and run docker-compose up -d.
 
